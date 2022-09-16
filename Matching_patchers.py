@@ -36,8 +36,6 @@ odd_numbers = one_to_twenty[::2]
 print(f'Odd numbers between one and 20 = {odd_numbers}')
 print(f'Product of odd numbers between one and 20 = {numpy.prod(odd_numbers)}')
 
-
-
 # # result if 20 people - 654_729_075 pairwise matchings
 # # result if 30 people - 6_190_283_353_629_375 pairwise matchings
 

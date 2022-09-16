@@ -7,3 +7,8 @@ As this is an NP-Hard problem, a near optimal solution is returned by default wh
 Otherwise, an optimal solution solution is returned.
 
 If there are an odd number of members to be matched. There will be a singular triplet.
+
+To Do:
+
+- Set up weight matrix to reflect distance between each person
+- Work with odd number of Patch members
