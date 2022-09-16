@@ -1,9 +1,16 @@
 import numpy as np
 from closeness_matrix import calculate_closeness_matrix 
+import time 
 
+start_time = time.time()
 #Need to enforce following check
 #patch_members = even(patch_members)
 patch_members = ['111','112', '121', '211', '212', '311','314','322']
+patch_members = ['121', '211', '212', '231', '232', '244', '311','314','322', '411', '431', '432'] # 12
+patch_members = ['111','112', '114','122', '121', '211', '212', '231', '232', '244', '311','314','322', '411'] # 14
+patch_members = ['111','112', '114','122', '121', '211', '212', '231', '232', '244', '311','314','322', '411', '431', '432'] # 16
+patch_members = ['111','112', '114','122', '121', '211', '212', '231', '232', '244', '311','314','322', '411', '413', '414', '431', '432'] # 18
+
 # first number indicates cohort #, second indicates team #, third indicates identifier on team
 all_pairwise_combinations = []
 cur_pairwise_combination = [None]*(int(len(patch_members)/2))
@@ -39,13 +46,23 @@ def expected_number_of_solutions(patch_members):
 # print(calculate_closeness_matrix(patch_members))
 
 closeness_matrix = calculate_closeness_matrix(patch_members)
-#take sample combination and find closeness score
-pair_combination = all_pairwise_combinations[0]
-print(pair_combination)
-print(pair_combination[0])
-print(pair_combination[0][0])
-closeness_sum = 0
-for pair in pair_combination:
-    pair_distance = closeness_matrix[pair[0]][pair[1]]
-    closeness_sum += pair_distance
-print(closeness_sum)
+max_closeness_score = 0
+min_closeness_score = 10
+for pair_combination in all_pairwise_combinations: #iterate over sample combinations to find optimal pairing combo
+    closeness_sum = 0
+    for pair in pair_combination:
+        pair_distance = closeness_matrix[pair[0]][pair[1]]
+        closeness_sum += pair_distance
+
+    if closeness_sum > max_closeness_score:
+        max_closeness_score = closeness_sum
+        max_combo = pair_combination
+    
+    if closeness_sum < min_closeness_score:
+        min_closeness_score = closeness_sum
+        min_combo = pair_combination
+    
+print(f'Pairing with max closeness score = {max_combo} \n with a closeness score of ... {max_closeness_score}')
+print(f'Pairing with min closeness score = {min_combo} \n with a closeness score of ... {min_closeness_score}')
+
+print(f'Time taken to pair {len(patch_members)} people was {time.time() - start_time} s')
