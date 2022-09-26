@@ -1,12 +1,4 @@
 #To Build
-from __future__ import generators
-
-
-Sample patch generators
-Optimal soln should <14 people sign up
-Soln for >18 people 
-
-
 # patchers = ['Tom', 'Darren', 'Will', 'Alice']
 # #patchers = ['Tom', 'Darren', 'Diane', 'Will', 'Alice']
 # #remove duplicates

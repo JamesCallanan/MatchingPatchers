@@ -2,6 +2,8 @@
 
 Algorithm to pairwise match patch cohort members in order to maximise meet ups between members who do not know each other or do not know each other well.
 
+Seems to be a problem with algorithm, matching some people more than once. Could it be due to lists being unordered and passing portions of lists?
+
 # To Do:
 
 - Build so it works with odd number of Patch members
@@ -42,3 +44,5 @@ Thus, this method of predicting the time needed for finding the optimal pairing 
 
 Pairing with min closeness score = [('244', '314'), ('322', '432'), ('322', '432'), ('322', '432'), ('414', '432'), ('322', '413'), ('414', '432'), ('414', '432'), ('231', '311')]
 with a closeness score of ... 0.8999999999999999
+
+pip install --upgrade google-api-python-client

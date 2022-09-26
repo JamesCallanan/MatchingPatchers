@@ -11,6 +11,9 @@ patch_members = ['111','112', '114','122', '121', '211', '212', '231', '232', '2
 patch_members = ['111','112', '114','122', '121', '211', '212', '231', '232', '244', '311','314','322', '411', '431', '432'] # 16
 patch_members = ['111','112', '114','122', '121', '211', '212', '231', '232', '244', '311','314','322', '411', '413', '414', '431', '432'] # 18
 
+# Week 1:
+patch_members = ['281', '421', '282', '471', '422', '411', '412', '481', '311', '361', '241', '251']
+
 # first number indicates cohort #, second indicates team #, third indicates identifier on team
 all_pairwise_combinations = []
 cur_pairwise_combination = [None]*(int(len(patch_members)/2))
